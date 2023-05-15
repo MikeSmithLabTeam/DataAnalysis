@@ -290,6 +290,7 @@ class Fit:
             self.plot_ax.scatter(self.fx, self.fy, marker='x', c='b')
             self.plot_ax.plot(self.fit_x, self.fit_y, 'g-')
         self.plot_ax.set_xlabel(self.xlabel)
+        self.plot_ax.set_ylabel(self.ylabel)
         #self.plot_ax.configure_yaxis(ylim=(self._plot_limits(self.y,lower=True),self._plot_limits(self.y,lower=False)),ylabel=self.ylabel)
         self.plot_ax.set_title(self.title)
 
