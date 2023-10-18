@@ -35,6 +35,8 @@ which makes a guess of the initial fitting parameters called fittype_guess
 '''
 '''custom fits'''
 def dipole_fit(x, a, b):
+    """Assumes angle x in degrees"""
+    x=x*np.pi/180
     b=b*np.pi/180
     return x/(a*np.sin(b+x))
 
