@@ -25,13 +25,18 @@ fit_dict = {
             'poisson': ('f(x)=a*(b**c)*exp(-b)/c!', 3),
             'axb':('f(x)=a(x)**b',2),
             'lorentzian':('f(x)=(c)*(a/2)**2/((x-b)**2 + (a/2)**2)', 3),
-            'triple_lorentzian':('f(x)=(c)*(a/2)/((x-b)**2 + (a/2)**2) + (f)*(d/2)/((x-e)**2 + (d/2)**2) + (j)*(g/2)/((x-h)**2 + (g/2)**2)', 9)
+            'triple_lorentzian':('f(x)=(c)*(a/2)/((x-b)**2 + (a/2)**2) + (f)*(d/2)/((x-e)**2 + (d/2)**2) + (j)*(g/2)/((x-h)**2 + (g/2)**2)', 9),
+            'dipole_fit':('f(x)=x/(a*sin(b+x))', 2),
            }
 
 '''
 Each fitting function has a function for the type of fit called fittype and optionally a function
 which makes a guess of the initial fitting parameters called fittype_guess
 '''
+'''custom fits'''
+def dipole_fit(x, a, b):
+    b=b*np.pi/180
+    return x/(a*np.sin(b+x))
 
 
 '''
